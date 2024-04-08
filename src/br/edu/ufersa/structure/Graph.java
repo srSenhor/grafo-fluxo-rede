@@ -20,13 +20,6 @@ public class Graph {
             nodes.add(n);
         }
     }
-    
-    public void addEdge(Node n, Edge e) {
-        if (n != null && e != null) {
-            n.add(e);
-            nodes.add(n);
-        }
-    }
 
     private void setNodes(List<Node> nodes) {
         if (nodes != null) {

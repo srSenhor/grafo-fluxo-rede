@@ -16,28 +16,27 @@ public class Main {
         Node v4 = new Node("v4");
         Node t = new Node("t");
         
-        // TODO: Arrumar a exibição, tá mostrando mais de uma vez o mesmo nó
 
+        s.add(new Edge(3, 0, v1));
+        s.add(new Edge(4, 2, v2));
+        s.add(new Edge(2, 2, v3));
+
+        v1.add(new Edge(3, 1, v3));
+
+        v2.add(new Edge(2, 2, v3));
+        v2.add(new Edge(3, 3, t));
+
+        v3.add(new Edge(1, 1, v2));
+        v3.add(new Edge(4, 4, v4));
+
+        v4.add(new Edge(3, 1, v1));
+        v4.add(new Edge(5, 3, t));
+        
         g.addNode(s);
-        g.addEdge(s, new Edge(3, 0, v1));
-        g.addEdge(s, new Edge(4, 2, v2));
-        g.addEdge(s, new Edge(2, 2, v3));
-
         g.addNode(v1);
-        g.addEdge(v1, new Edge(3, 1, v3));
-        
         g.addNode(v2);
-        g.addEdge(v2, new Edge(2, 2, v3));
-        g.addEdge(v2, new Edge(3, 3, t));
-        
         g.addNode(v3);
-        g.addEdge(v3, new Edge(1, 1, v2));
-        g.addEdge(v3, new Edge(4, 4, v4));
-        
         g.addNode(v4);
-        g.addEdge(v4, new Edge(3, 1, v1));
-        g.addEdge(v4, new Edge(5, 3, t));
-        
         g.addNode(t);
         
         g.print();
