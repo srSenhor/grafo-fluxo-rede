@@ -1,45 +1,50 @@
 package br.edu.ufersa.main;
 
-import br.edu.ufersa.structure.Edge;
 import br.edu.ufersa.structure.Graph;
-import br.edu.ufersa.structure.Node;
 
 public class Main {
     public static void main(String[] args) {
 
-        Graph g = new Graph();
+        int [][] adj_matrix0 = {
+            {0, 16, 13, 0, 0, 0},
+            {0, 0, 10, 12, 0, 0},
+            {0, 4, 0, 0, 14, 0},
+            {0, 0, 9, 0, 0, 20},
+            {0, 0, 0, 7, 0, 4},
+            {0, 0, 0, 0, 0, 0}
+        };
 
-        Node s = new Node("s");
-        Node v1 = new Node("v1");
-        Node v2 = new Node("v2");
-        Node v3 = new Node("v3");
-        Node v4 = new Node("v4");
-        Node t = new Node("t");
+        int [][] adj_matrix1 = {
+            {0, 3, 2, 0},
+            {0, 0, 5, 2},
+            {0, 0, 0, 3},
+            {0, 0, 0, 0}
+        };
+
+        int [][] adj_matrix2 = {
+            {0, 10, 0, 10, 0, 0},
+            {0, 0, 4, 2, 8, 0},
+            {0, 0, 0, 0, 0, 10},
+            {0, 0, 0, 0, 9, 0},
+            {0, 0, 6, 0, 0, 10},
+            {0, 0, 0, 0, 0, 0}
+        };
+
+
+        // Graph g = new Graph(adj_matrix0);
+        // g.print();
+
+        // System.out.println("Max flow for the G is " + g.fordFulkerson(0, 5)); // Expected: 23
         
+        // Graph g = new Graph(adj_matrix1);
+        // g.print();
 
-        s.add(new Edge(3, 0, v1));
-        s.add(new Edge(4, 2, v2));
-        s.add(new Edge(2, 2, v3));
+        // System.out.println("Max flow for the G is " + g.fordFulkerson(0, 3)); // Expected: 5
 
-        v1.add(new Edge(3, 1, v3));
-
-        v2.add(new Edge(2, 2, v3));
-        v2.add(new Edge(3, 3, t));
-
-        v3.add(new Edge(1, 1, v2));
-        v3.add(new Edge(4, 4, v4));
-
-        v4.add(new Edge(3, 1, v1));
-        v4.add(new Edge(5, 3, t));
-        
-        g.addNode(s);
-        g.addNode(v1);
-        g.addNode(v2);
-        g.addNode(v3);
-        g.addNode(v4);
-        g.addNode(t);
-        
+        Graph g = new Graph(adj_matrix2);
         g.print();
+
+        System.out.println("Max flow for the G is " + g.fordFulkerson(0, 5)); // Expected: 19
         
     }
 }
