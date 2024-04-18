@@ -97,7 +97,7 @@ public class Graph {
         if (adj_matrix != null) {
             this.adj_matrix = adj_matrix;
         } else {
-            throw new RuntimeException("Cannot continue because incidence matrix is null");
+            throw new RuntimeException("Cannot continue because adjacence matrix is null");
         }
     }
 
